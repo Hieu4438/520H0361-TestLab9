@@ -23,5 +23,19 @@ namespace TestLab9
                 Assert.AreEqual(res, a.getLetterScore());
             }
         }
+
+
+        [TestMethod]
+        [ExpectedException(typeof(SystemException))]
+        [DataRow(new double[] { -1, -10, -9, -4, -5, -1.1, -0.05, -0.0002 })]
+        [DataRow(new double[] { 11, 10.0001, 10.052, 12, 10.00002, 10.00003})]
+        public void throwSystemError_WhenScoreIs(double[] cases)
+        {
+            Student a = new Student();
+            for (int i = 0; i < cases.Length; i++)
+            {
+                a.Score = cases[i];
+            }
+        }
     }
 }   
