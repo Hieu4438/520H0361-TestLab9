@@ -1,0 +1,3 @@
+Method getLetterScore in Student class:
+ - fail: score in [7,8) equals B
+ - fail: score in [5,7) equals C
